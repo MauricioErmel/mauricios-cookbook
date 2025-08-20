@@ -1,0 +1,243 @@
+
+
+        /* 1. Variables and Global Resets */
+        :root {
+            --bg-color: #f9f7f3;
+            --text-color: #333;
+            --primary-color: #ffc400; /* A warm, egg-yolk yellow */
+            --light-grey: #e9ecef;
+            --border-color: #dee2e6;
+            --font-family: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* 2. Layout and Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 3. Header and Navigation */
+        .main-header {
+            background-color: white;
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 4. Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: white;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* 5. Content Sections */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Reveal-on-scroll animation setup */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2.section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Underline effect for titles */
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* 6. Ingredients List Styling */
+        #ingredients ul {
+            list-style-type: none;
+        }
+
+        #ingredients li {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        #ingredients li:hover {
+            transform: translateX(5px);
+            background-color: #fffdf6;
+        }
+
+        #ingredients li strong {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        #ingredients li p {
+            font-style: italic;
+            color: #666;
+            margin-left: 10px;
+            border-left: 2px solid var(--light-grey);
+            padding-left: 15px;
+        }
+        
+        /* 7. Instructions List Styling */
+        #instructions ol {
+            list-style-type: none;
+            counter-reset: instruction-counter;
+        }
+
+        #instructions li {
+            position: relative;
+            padding: 15px 15px 15px 60px;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+
+        #instructions li::before {
+            counter-increment: instruction-counter;
+            content: counter(instruction-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* 8. Extra Tips Styling */
+        #tips ul {
+            list-style-type: none;
+        }
+        
+        #tips li {
+            padding: 15px;
+            border-bottom: 1px solid var(--light-grey);
+            transition: background-color 0.3s ease;
+        }
+        
+        #tips li:hover {
+            background-color: white;
+        }
+        
+        #tips li::before {
+            content: "💡";
+            margin-right: 10px;
+        }
+
+        /* 9. Footer */
+        .main-footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* 10. Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .main-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            #instructions li {
+                padding: 15px 15px 15px 50px;
+            }
+            
+            #instructions li::before {
+                width: 35px;
+                font-size: 1rem;
+            }
+        }
