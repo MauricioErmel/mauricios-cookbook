@@ -86,12 +86,65 @@
             margin-bottom: 10px;
         }
 
+        .hero-content {
+            max-width: 800px;
+            margin: 40px auto 0;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         .hero-subtitle {
             font-size: 1.2rem;
             font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
             color: #555;
+            text-align: left;
+        }
+
+        .hero-info {
+            max-width: 800px;
+            margin: 70px auto 0;
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+        }
+
+        .hero-info div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero-info img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .hero-info span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffc400;
         }
 
         /* 5. Content Sections */
@@ -215,9 +268,16 @@
             background-color: white;
         }
         
-        #tips li::before {
-            content: "💡";
+                #tips li::before {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
             margin-right: 10px;
+            background-image: url("../images/general/lamp.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            vertical-align: middle;
         }
 
         /* 9. Footer */
@@ -234,6 +294,15 @@
                 font-size: 2.5rem;
             }
 
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .main-header .container {
                 flex-direction: column;
                 gap: 15px;
@@ -248,5 +317,3 @@
                 font-size: 1rem;
             }
         }
-
-        
