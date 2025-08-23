@@ -2,14 +2,14 @@
 
             // 1. Smooth scrolling for navigation links
             $('.main-nav a[href^="#"]').on('click', function(event) {
-                event.preventDefault();
+                event.preventDefault(); // Prevent default anchor click behavior
 
-                var target = this.hash;
-                var $target = $(target);
+                var target = this.hash; // Get the target section ID from the clicked link
+                var $target = $(target); // Convert to jQuery object
 
                 $('html, body').stop().animate({
-                    'scrollTop': $target.offset().top - 70 // Offset for the sticky header
-                }, 800, 'swing');
+                    'scrollTop': $target.offset().top - 85 // -85 is how much the href^="#" (e.g. #instructions) will be offset from the sticky header after being clicked on nav
+                }, 800, 'swing'); // 800ms for the animation duration
             });
 
             // 2. Reveal sections on scroll

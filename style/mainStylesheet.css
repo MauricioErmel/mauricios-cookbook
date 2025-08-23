@@ -1,6 +1,4 @@
-
-
-        /* 1. Variables and Global Resets */
+/* 1. Variables and Global Resets */
         :root {
             --bg-color: #f9f7f3;
             --text-color: #333;
@@ -51,7 +49,8 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-family: 'Babylonica', cursive;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--text-color);
             text-decoration: none;
@@ -150,7 +149,8 @@
         }
 
         #ingredients li strong {
-            display: block;
+            display: flex;
+            align-items: center;
             font-size: 1.2rem;
             margin-bottom: 8px;
         }
@@ -161,6 +161,13 @@
             margin-left: 10px;
             border-left: 2px solid var(--light-grey);
             padding-left: 15px;
+        }
+
+        .ingredient-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
         }
         
         /* 7. Instructions List Styling */
@@ -241,3 +248,5 @@
                 font-size: 1rem;
             }
         }
+
+        
